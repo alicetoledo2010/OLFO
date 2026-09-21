@@ -16,12 +16,13 @@
         body {
             background: #f5f7fb;
             color: #172033;
+            min-height: 100vh;
         }
 
         header {
             background: #101c3a;
             color: white;
-            padding: 20px 7%;
+            padding: 18px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -37,139 +38,157 @@
             color: #f4c542;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
+        .header-text {
+            color: #dce3f2;
+            font-size: 14px;
         }
 
-        .hero {
-            min-height: 500px;
+        .chat-container {
+            width: 90%;
+            max-width: 900px;
+            height: 75vh;
+            margin: 40px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            overflow: hidden;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 70px 8%;
+            flex-direction: column;
+        }
+
+        .chat-top {
             background: linear-gradient(135deg, #101c3a, #1c3768);
             color: white;
-        }
-
-        .hero-text {
-            max-width: 600px;
-        }
-
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #f4c542;
-        }
-
-        .hero p {
-            font-size: 20px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            color: #e2e7f2;
-        }
-
-        .button {
-            display: inline-block;
-            background: #f4c542;
-            color: #101c3a;
-            padding: 15px 28px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         .robot {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
+            width: 55px;
+            height: 55px;
             background: #f4c542;
+            border-radius: 50%;
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-size: 120px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+            justify-content: center;
+            font-size: 28px;
         }
 
-        .section {
-            padding: 60px 8%;
-            text-align: center;
+        .chat-top h1 {
+            font-size: 22px;
+            margin-bottom: 5px;
         }
 
-        .section h2 {
-            font-size: 32px;
-            margin-bottom: 40px;
-            color: #101c3a;
+        .chat-top p {
+            font-size: 13px;
+            color: #dce3f2;
         }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+        .messages {
+            flex: 1;
+            padding: 25px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        .card {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card .icon {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            color: #101c3a;
-        }
-
-        .card p {
-            color: #667085;
+        .message {
+            max-width: 75%;
+            padding: 14px 18px;
+            border-radius: 16px;
             line-height: 1.5;
+            font-size: 15px;
         }
 
-        footer {
+        .olfo-message {
+            align-self: flex-start;
+            background: #eef2f8;
+            color: #172033;
+            border-bottom-left-radius: 4px;
+        }
+
+        .user-message {
+            align-self: flex-end;
             background: #101c3a;
             color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 30px;
+            border-bottom-right-radius: 4px;
         }
 
-        @media (max-width: 700px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                gap: 40px;
+        .input-area {
+            padding: 18px;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            gap: 10px;
+            background: white;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 15px 18px;
+            border: 2px solid #e1e5ec;
+            border-radius: 12px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .input-area input:focus {
+            border-color: #1c3768;
+        }
+
+        .send-button {
+            background: #f4c542;
+            color: #101c3a;
+            border: none;
+            padding: 0 25px;
+            border-radius: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .send-button:hover {
+            opacity: 0.9;
+        }
+
+        .new-chat {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .new-chat button {
+            background: transparent;
+            border: 2px solid #101c3a;
+            color: #101c3a;
+            padding: 10px 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .chat-container {
+                width: 95%;
+                height: 80vh;
+                margin: 20px auto;
             }
 
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            .robot {
-                width: 200px;
-                height: 200px;
-                font-size: 80px;
-            }
-
-            nav {
+            .header-text {
                 display: none;
+            }
+
+            .message {
+                max-width: 85%;
+            }
+
+            .input-area {
+                padding: 12px;
+            }
+
+            .send-button {
+                padding: 0 16px;
             }
         }
     </style>
@@ -179,85 +198,102 @@
 
 <header>
     <div class="logo">OL<span>F</span>O</div>
-
-    <nav>
-        <a href="#">Início</a>
-        <a href="#">Matérias</a>
-        <a href="#">Exercícios</a>
-        <a href="#">Sobre</a>
-    </nav>
+    <div class="header-text">Sua inteligência para estudar 📚</div>
 </header>
 
-<section class="hero">
+<div class="chat-container">
 
-    <div class="hero-text">
-        <h1>Olá! Eu sou a <span>OLFO</span> 👋</h1>
+    <div class="chat-top">
+        <div class="robot">🧠</div>
 
-        <p>
-            Sua inteligência artificial para estudar,
-            aprender e descobrir novas coisas.
-        </p>
+        <div>
+            <h1>Olá! Eu sou a OLFO 👋</h1>
+            <p>Estou aqui para ajudar você a aprender.</p>
+        </div>
+    </div>
 
-        <button class="button" onclick="alert('Em breve você poderá conversar com a OLFO!')">
-            🤖 Conversar com a OLFO
+    <div class="messages" id="messages">
+
+        <div class="message olfo-message">
+            Olá! 👋 Eu sou a <strong>OLFO</strong>. 
+            <br><br>
+            Pode me perguntar qualquer coisa sobre seus estudos. 
+            Vou tentar explicar de uma maneira simples e passo a passo! 📚✨
+        </div>
+
+    </div>
+
+    <div class="input-area">
+
+        <input
+            type="text"
+            id="userInput"
+            placeholder="Digite sua pergunta..."
+            onkeydown="if(event.key === 'Enter') enviarMensagem()"
+        >
+
+        <button class="send-button" onclick="enviarMensagem()">
+            Enviar
         </button>
-    </div>
-
-    <div class="robot">
-        🧠
-    </div>
-
-</section>
-
-<section class="section">
-
-    <h2>O que você quer estudar hoje?</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <div class="icon">📐</div>
-            <h3>Matemática</h3>
-            <p>Aprenda matemática de maneira simples e passo a passo.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">📖</div>
-            <h3>Português</h3>
-            <p>Gramática, interpretação, literatura e redação.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🌎</div>
-            <h3>História e Geografia</h3>
-            <p>Explore acontecimentos, lugares e sociedades.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🔬</div>
-            <h3>Ciências</h3>
-            <p>Descubra o mundo através da ciência.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🇺🇸</div>
-            <h3>Inglês</h3>
-            <p>Aprenda vocabulário, gramática e interpretação.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">📝</div>
-            <h3>Exercícios</h3>
-            <p>Pratique seus conhecimentos com exercícios.</p>
-        </div>
 
     </div>
 
-</section>
+</div>
 
-<footer>
-    <p>© 2026 OLFO — Sua inteligência para estudar.</p>
-</footer>
+<div class="new-chat">
+    <button onclick="novaConversa()">
+        🔄 Nova conversa
+    </button>
+</div>
+
+<script>
+
+function enviarMensagem() {
+
+    const input = document.getElementById("userInput");
+    const messages = document.getElementById("messages");
+
+    const pergunta = input.value.trim();
+
+    if (pergunta === "") {
+        return;
+    }
+
+    const mensagemUsuario = document.createElement("div");
+    mensagemUsuario.className = "message user-message";
+    mensagemUsuario.textContent = pergunta;
+
+    messages.appendChild(mensagemUsuario);
+
+    input.value = "";
+
+    const mensagemOlfo = document.createElement("div");
+    mensagemOlfo.className = "message olfo-message";
+
+    mensagemOlfo.innerHTML =
+        "Recebi sua pergunta! 🤖💙<br><br>" +
+        "Ainda estou sendo preparada para responder de verdade. " +
+        "Em breve vou poder explicar esse assunto para você passo a passo! 📚";
+
+    messages.appendChild(mensagemOlfo);
+
+    messages.scrollTop = messages.scrollHeight;
+}
+
+function novaConversa() {
+
+    const messages = document.getElementById("messages");
+
+    messages.innerHTML = `
+        <div class="message olfo-message">
+            Olá novamente! 👋
+            <br><br>
+            Vamos começar uma nova conversa. O que você quer estudar hoje? 📚✨
+        </div>
+    `;
+}
+
+</script>
 
 </body>
 </html>
