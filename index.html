@@ -691,43 +691,64 @@ function abrirChat() {
 }
 
 
-function enviarMensagem() {
+async function enviarMensagem() {
 
-    const input = document.getElementById("userInput");
+  const input = document.getElementById("userInput");
+  const messages = document.getElementById("messages");
 
-    const messages = document.getElementById("messages");
+  const pergunta = input.value.trim();
 
-    const pergunta = input.value.trim();
+  if (pergunta === "") {
+    return;
+  }
 
-    if (pergunta === "") {
-        return;
+  const mensagemUsuario = document.createElement("div");
+  mensagemUsuario.className = "message user-message";
+  mensagemUsuario.textContent = pergunta;
+
+  messages.appendChild(mensagemUsuario);
+
+  input.value = "";
+
+  const mensagemToledo = document.createElement("div");
+  mensagemToledo.className = "message toledo-message";
+  mensagemToledo.textContent = "Pensando... 💗";
+
+  messages.appendChild(mensagemToledo);
+
+  messages.scrollTop = messages.scrollHeight;
+
+  try {
+
+    const resposta = await fetch("https://toledo-theta.vercel.app/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: pergunta
+      })
+    });
+
+    const data = await resposta.json();
+
+    if (!resposta.ok) {
+      throw new Error(data.error || "Erro ao conversar com a IA.");
     }
 
-    const mensagemUsuario = document.createElement("div");
+    mensagemToledo.textContent = data.reply;
 
-    mensagemUsuario.className = "message user-message";
+  } catch (error) {
 
-    mensagemUsuario.textContent = pergunta;
+    console.error(error);
 
-    messages.appendChild(mensagemUsuario);
+    mensagemToledo.textContent =
+      "Ops! 😔 Não consegui responder agora. Tente novamente em alguns segundos.";
 
-    input.value = "";
+  }
 
-    const mensagemToledo = document.createElement("div");
-
-    mensagemToledo.className = "message toledo-message";
-
-    mensagemToledo.innerHTML =
-        "Recebi sua pergunta! 🤖💗<br><br>" +
-        "Ainda estou sendo preparada para responder de verdade. " +
-        "Em breve vou poder explicar esse assunto para você passo a passo! 📚✨";
-
-    messages.appendChild(mensagemToledo);
-
-    messages.scrollTop = messages.scrollHeight;
-
+  messages.scrollTop = messages.scrollHeight;
 }
-
 
 function novaConversa() {
 
