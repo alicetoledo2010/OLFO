@@ -14,18 +14,19 @@
         }
 
         body {
-            background: #f5f7fb;
-            color: #172033;
+            background: linear-gradient(135deg, #fff5fa, #fde4f0);
+            color: #3d1830;
             min-height: 100vh;
         }
 
         header {
-            background: #101c3a;
+            background: linear-gradient(135deg, #7b174f, #b52b72);
             color: white;
             padding: 18px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 15px rgba(123, 23, 79, 0.25);
         }
 
         .logo {
@@ -35,11 +36,11 @@
         }
 
         .logo span {
-            color: #f4c542;
+            color: #ffd1e6;
         }
 
         .header-text {
-            color: #dce3f2;
+            color: #ffeaf4;
             font-size: 14px;
         }
 
@@ -49,15 +50,16 @@
             height: 75vh;
             margin: 40px auto;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(123, 23, 79, 0.18);
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            border: 1px solid #f5c5db;
         }
 
         .chat-top {
-            background: linear-gradient(135deg, #101c3a, #1c3768);
+            background: linear-gradient(135deg, #9d1f61, #d64d91);
             color: white;
             padding: 25px;
             display: flex;
@@ -68,12 +70,14 @@
         .robot {
             width: 55px;
             height: 55px;
-            background: #f4c542;
+            background: #ffd1e6;
+            color: #8a1855;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 28px;
+            box-shadow: 0 4px 12px rgba(80, 0, 45, 0.15);
         }
 
         .chat-top h1 {
@@ -83,7 +87,7 @@
 
         .chat-top p {
             font-size: 13px;
-            color: #dce3f2;
+            color: #ffeaf4;
         }
 
         .messages {
@@ -93,64 +97,72 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
+            background: #fffafd;
         }
 
         .message {
             max-width: 75%;
             padding: 14px 18px;
-            border-radius: 16px;
+            border-radius: 18px;
             line-height: 1.5;
             font-size: 15px;
         }
 
         .toledo-message {
             align-self: flex-start;
-            background: #eef2f8;
-            color: #172033;
-            border-bottom-left-radius: 4px;
+            background: #fce7f1;
+            color: #4a2039;
+            border-bottom-left-radius: 5px;
+            border: 1px solid #f5ccdf;
         }
 
         .user-message {
             align-self: flex-end;
-            background: #101c3a;
+            background: linear-gradient(135deg, #8c1957, #b52b72);
             color: white;
-            border-bottom-right-radius: 4px;
+            border-bottom-right-radius: 5px;
+            box-shadow: 0 4px 10px rgba(123, 23, 79, 0.15);
         }
 
         .input-area {
             padding: 18px;
-            border-top: 1px solid #e5e7eb;
+            border-top: 1px solid #f3d5e3;
             display: flex;
             gap: 10px;
-            background: white;
+            background: #fff;
         }
 
         .input-area input {
             flex: 1;
             padding: 15px 18px;
-            border: 2px solid #e1e5ec;
-            border-radius: 12px;
+            border: 2px solid #efc5d9;
+            border-radius: 14px;
             outline: none;
             font-size: 15px;
+            color: #4a2039;
+            background: #fffafd;
         }
 
         .input-area input:focus {
-            border-color: #1c3768;
+            border-color: #c3387e;
+            box-shadow: 0 0 0 3px rgba(195, 56, 126, 0.1);
         }
 
         .send-button {
-            background: #f4c542;
-            color: #101c3a;
+            background: linear-gradient(135deg, #d84b91, #a51f64);
+            color: white;
             border: none;
             padding: 0 25px;
-            border-radius: 12px;
+            border-radius: 14px;
             font-weight: bold;
             cursor: pointer;
             font-size: 15px;
+            box-shadow: 0 5px 12px rgba(165, 31, 100, 0.2);
         }
 
         .send-button:hover {
             opacity: 0.9;
+            transform: translateY(-1px);
         }
 
         .new-chat {
@@ -159,13 +171,19 @@
         }
 
         .new-chat button {
-            background: transparent;
-            border: 2px solid #101c3a;
-            color: #101c3a;
+            background: white;
+            border: 2px solid #a51f64;
+            color: #8c1957;
             padding: 10px 18px;
-            border-radius: 10px;
+            border-radius: 12px;
             cursor: pointer;
             font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .new-chat button:hover {
+            background: #a51f64;
+            color: white;
         }
 
         @media (max-width: 600px) {
@@ -271,9 +289,9 @@ function enviarMensagem() {
     mensagemToledo.className = "message toledo-message";
 
     mensagemToledo.innerHTML =
-        "Recebi sua pergunta! 🤖💙<br><br>" +
+        "Recebi sua pergunta! 🤖💗<br><br>" +
         "Ainda estou sendo preparada para responder de verdade. " +
-        "Em breve vou poder explicar esse assunto para você passo a passo! 📚";
+        "Em breve vou poder explicar esse assunto para você passo a passo! 📚✨";
 
     messages.appendChild(mensagemToledo);
 
