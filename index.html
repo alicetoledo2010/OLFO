@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OLFO - Sua Inteligência para Estudar</title>
+    <title>TOLEDO - Sua Inteligência para Estudar</title>
 
     <style>
         * {
@@ -103,7 +103,7 @@
             font-size: 15px;
         }
 
-        .olfo-message {
+        .toledo-message {
             align-self: flex-start;
             background: #eef2f8;
             color: #172033;
@@ -197,7 +197,7 @@
 <body>
 
 <header>
-    <div class="logo">OL<span>F</span>O</div>
+    <div class="logo">TO<span>L</span>EDO</div>
     <div class="header-text">Sua inteligência para estudar 📚</div>
 </header>
 
@@ -207,17 +207,17 @@
         <div class="robot">🧠</div>
 
         <div>
-            <h1>Olá! Eu sou a OLFO 👋</h1>
+            <h1>Olá! Eu sou a TOLEDO 👋</h1>
             <p>Estou aqui para ajudar você a aprender.</p>
         </div>
     </div>
 
     <div class="messages" id="messages">
 
-        <div class="message olfo-message">
-            Olá! 👋 Eu sou a <strong>OLFO</strong>. 
+        <div class="message toledo-message">
+            Olá! 👋 Eu sou a <strong>TOLEDO</strong>.
             <br><br>
-            Pode me perguntar qualquer coisa sobre seus estudos. 
+            Pode me perguntar qualquer coisa sobre seus estudos.
             Vou tentar explicar de uma maneira simples e passo a passo! 📚✨
         </div>
 
@@ -267,15 +267,15 @@ function enviarMensagem() {
 
     input.value = "";
 
-    const mensagemOlfo = document.createElement("div");
-    mensagemOlfo.className = "message olfo-message";
+    const mensagemToledo = document.createElement("div");
+    mensagemToledo.className = "message toledo-message";
 
-    mensagemOlfo.innerHTML =
+    mensagemToledo.innerHTML =
         "Recebi sua pergunta! 🤖💙<br><br>" +
         "Ainda estou sendo preparada para responder de verdade. " +
         "Em breve vou poder explicar esse assunto para você passo a passo! 📚";
 
-    messages.appendChild(mensagemOlfo);
+    messages.appendChild(mensagemToledo);
 
     messages.scrollTop = messages.scrollHeight;
 }
@@ -285,7 +285,7 @@ function novaConversa() {
     const messages = document.getElementById("messages");
 
     messages.innerHTML = `
-        <div class="message olfo-message">
+        <div class="message toledo-message">
             Olá novamente! 👋
             <br><br>
             Vamos começar uma nova conversa. O que você quer estudar hoje? 📚✨
